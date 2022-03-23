@@ -1,0 +1,10 @@
+:root {
+	--darkblue:  rgb(3, 4, 94);
+	--mediumblue: rgb(0, 119, 182);
+}
+
+body {
+	font-family: Georgia;
+	background: var(--mediumblue);
+	color: var(--darkblue);
+}
