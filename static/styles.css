@@ -1,10 +1,42 @@
 :root {
 	--darkblue:  rgb(3, 4, 94);
 	--mediumblue: rgb(0, 119, 182);
+	--darkblack: rgb(33, 37, 41);
+	--darkgrey: rgb(52, 58, 64);
+	--lightgrey: rgb(108, 117, 125);
 }
 
 body {
 	font-family: Georgia;
-	background: var(--mediumblue);
-	color: var(--darkblue);
+	background: var(--darkgrey);
+}
+
+.options {
+	display: flex;
+}
+
+header {
+	margin: 50px;
+}
+
+h1 {
+	margin: auto;
+	text-align: center;
+	padding: 10px;
+}
+
+div {
+	background: var(--darkblack);
+	color: var(--lightgrey);
+
+	height: 500px;
+	padding: 15px;
+	width: 45%;
+	margin: auto;
+}
+
+p {
+	font-size: 20px;
+	padding: 215px 0;
+	text-align: center;
 }
