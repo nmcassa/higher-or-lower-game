@@ -1,9 +1,10 @@
 :root {
 	--darkblue:  rgb(3, 4, 94);
-	--mediumblue: rgb(0, 119, 182);
+	--mediumblue: rgb(87, 117, 144);
 	--darkblack: rgb(33, 37, 41);
 	--darkgrey: rgb(52, 58, 64);
 	--lightgrey: rgb(108, 117, 125);
+	--red: rgb(249, 65, 68);
 }
 
 body {
@@ -21,6 +22,7 @@ header {
 
 h1 {
 	margin: auto;
+	font-size: 50px;
 	text-align: center;
 	padding: 10px;
 }
@@ -36,7 +38,38 @@ div {
 }
 
 p {
-	font-size: 20px;
-	padding: 215px 0;
+	font-size: 40px;
+	padding-top: 125px;
+	padding-bottom: 40px;
 	text-align: center;
+}
+
+p.winnings {
+	padding: 0;
+}
+
+button {
+	color: var(--darkblack);
+	cursor: pointer;
+	border: none;
+	border-radius: 12px;
+	display: block;
+	font-size: 15px;
+	height: 10%;
+	margin: auto;
+	margin-bottom: 15px;
+	opacity: .8;
+	width: 35%;
+}
+
+button:hover {
+	opacity: 1;
+}
+
+.higher {
+	background-color: var(--red);
+}
+
+.lower {
+	background-color: var(--mediumblue);
 }
