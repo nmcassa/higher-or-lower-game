@@ -12,16 +12,8 @@ body {
 	background: var(--darkgrey);
 }
 
-.options {
-	display: flex;
-}
-
-header {
-	margin: 50px;
-}
-
 h1 {
-	margin: auto;
+	margin: 50px;
 	font-size: 50px;
 	text-align: center;
 	padding: 10px;
@@ -35,6 +27,20 @@ div {
 	padding: 15px;
 	width: 45%;
 	margin: auto;
+}
+
+button {
+	color: var(--darkblack);
+	cursor: pointer;
+	border: none;
+	border-radius: 12px;
+	display: block;
+	font-size: 15px;
+	height: 10%;
+	margin: auto;
+	margin-bottom: 15px;
+	opacity: .8;
+	width: 35%;
 }
 
 p {
@@ -52,25 +58,15 @@ p.loser {
 	color: var(--red);
 }
 
+.options {
+	display: flex;
+}
+
 #high-score {
 	color: var(--lightgrey);
 	font-size: 30px;
 	padding-top: 5px;
-	padding-bottom: 5px;
-}
-
-button {
-	color: var(--darkblack);
-	cursor: pointer;
-	border: none;
-	border-radius: 12px;
-	display: block;
-	font-size: 15px;
-	height: 10%;
-	margin: auto;
-	margin-bottom: 15px;
-	opacity: .8;
-	width: 35%;
+	padding-bottom: 25px;
 }
 
 button:hover {

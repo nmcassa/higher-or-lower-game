@@ -33,15 +33,6 @@ def rl_getPay():
         count += 1
     return combined
 
-def rl_top_rlcs():
-    page = get_parsed_page("https://liquipedia.net/rocketleague/Rocket_League_Championship_Series/2021-22/Rankings")
-    green_teams = []
-    
-    for team in page.find_all("td", {'style':'font-weight:bold;background-color:rgb(221,244,221)'}):
-        team = team.parent.findChildren()[10].text
-        green_teams.append(team)
-    return green_teams
-
 def cs_getTeams():
     page = get_parsed_page("https://liquipedia.net/counterstrike/Portal:Teams")
     teams = []
@@ -99,5 +90,5 @@ if __name__ == "__main__":
     import pprint
     pp = pprint.PrettyPrinter()
 
-    pp.pprint(rl_top_rlcs())
+    pp.pprint(d2_getPay())
     

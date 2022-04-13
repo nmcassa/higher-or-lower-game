@@ -1,11 +1,8 @@
 eLeft = document.getElementById('left');
 eRight = document.getElementById('right');
-eLeftW = document.getElementById('left-winnings');
-scoreElement = document.getElementById('score');
-highScoreElement = document.getElementById('high-score');
 
-highScoreElement.innerHTML = "High Score: " + localStorage.getItem("highScore");
-scoreElement.innerHTML = "Score: 0";
+document.getElementById('high-score').innerHTML = "High Score: " + localStorage.getItem("highScore");
+document.getElementById('score').innerHTML = "Score: 0";
 
 listOfRLTeams = [];
 teamIndex = 0;
@@ -40,7 +37,7 @@ async function myDisplayer(some) {
 
   //shows first two teams
   eLeft.innerHTML = listOfRLTeams[teamIndex][0];
-  eLeftW.innerHTML = listOfRLTeams[teamIndex++][1];
+  document.getElementById('left-winnings').innerHTML = listOfRLTeams[teamIndex++][1];
   eRight.innerHTML = listOfRLTeams[teamIndex][0];
 }
 
@@ -50,9 +47,9 @@ function button_clicked(choice) {
   rightPrice = parseInt(listOfRLTeams[teamIndex][1].replace(/\$|,/g, ''));
   if ((choice == 0 && (leftPrice < rightPrice)) || (choice == 1 && (leftPrice > rightPrice))) {
     eLeft.innerHTML = eRight.innerHTML;
-    eLeftW.innerHTML = listOfRLTeams[teamIndex++][1];
+    document.getElementById('left-winnings').innerHTML = listOfRLTeams[teamIndex++][1];
     eRight.innerHTML = listOfRLTeams[teamIndex][0];
-    scoreElement.innerHTML = "Score: " + ++score;
+    document.getElementById('score').innerHTML = "Score: " + ++score;
   } else {
     loser();
   }
@@ -68,8 +65,7 @@ function loser() {
   document.getElementById("right-div").appendChild(para);
 
   para2 = document.createElement("p");
-  para2.classList.add("winnings");
-  para2.classList.add("loser");
+  para2.classList.add("winnings", "loser");
   para2.innerHTML = "You Lost!";
   document.getElementById("right-div").appendChild(para2);
 
