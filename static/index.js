@@ -1,8 +1,21 @@
 eLeft = document.getElementById('left');
 eRight = document.getElementById('right');
 eLeftW = document.getElementById('left-winnings');
+scoreElement = document.getElementById('score');
+highScoreElement = document.getElementById('high-score');
+
+highScoreElement.innerHTML = "High Score: " + localStorage.getItem("highScore");
+scoreElement.innerHTML = "Score: 0";
+
 listOfRLTeams = [];
 teamIndex = 0;
+score = 0;
+
+function storageCheck() {
+  if (localStorage.getItem("highScore") == null) {
+    localStorage.setItem("highScore", 0);
+  }
+}
 
 fetch('/test')
       .then(function (response) {
@@ -33,7 +46,34 @@ async function myDisplayer(some) {
 
 function button_clicked(choice) {
   //choice = 0 if higher, choice = 1 if lower
-  eLeft.innerHTML = eRight.innerHTML;
-  eLeftW.innerHTML = listOfRLTeams[teamIndex++][1];
-  eRight.innerHTML = listOfRLTeams[teamIndex][0];
+  leftPrice = parseInt(listOfRLTeams[teamIndex-1][1].replace(/\$|,/g, ''));
+  rightPrice = parseInt(listOfRLTeams[teamIndex][1].replace(/\$|,/g, ''));
+  if ((choice == 0 && (leftPrice < rightPrice)) || (choice == 1 && (leftPrice > rightPrice))) {
+    eLeft.innerHTML = eRight.innerHTML;
+    eLeftW.innerHTML = listOfRLTeams[teamIndex++][1];
+    eRight.innerHTML = listOfRLTeams[teamIndex][0];
+    scoreElement.innerHTML = "Score: " + ++score;
+  } else {
+    loser();
+  }
+}
+
+function loser() {
+  document.getElementsByClassName("higher")[0].remove();
+  document.getElementsByClassName("lower")[0].remove();
+
+  para = document.createElement("p");
+  para.classList.add("winnings");
+  para.innerHTML = listOfRLTeams[teamIndex][1];
+  document.getElementById("right-div").appendChild(para);
+
+  para2 = document.createElement("p");
+  para2.classList.add("winnings");
+  para2.classList.add("loser");
+  para2.innerHTML = "You Lost!";
+  document.getElementById("right-div").appendChild(para2);
+
+  if (localStorage.getItem("highScore") < score) {
+    localStorage.setItem("highScore", score);
+  }
 }

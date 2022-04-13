@@ -39,13 +39,24 @@ div {
 
 p {
 	font-size: 40px;
-	padding-top: 125px;
+	padding-top: 90px;
 	padding-bottom: 40px;
 	text-align: center;
 }
 
 p.winnings {
 	padding: 0;
+}
+
+p.loser {
+	color: var(--red);
+}
+
+#high-score {
+	color: var(--lightgrey);
+	font-size: 30px;
+	padding-top: 5px;
+	padding-bottom: 5px;
 }
 
 button {

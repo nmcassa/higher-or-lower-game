@@ -5,16 +5,18 @@
 		<title>Home</title>
 		<link rel="stylesheet" type="text/css" href="../static/styles.css">
 	</head>
-	<body>
+	<body onload="storageCheck()">
 		<header>
 			<h1>Higher or Lower Rocket League Orgs Earnings</h1>
+			<p id="high-score"></p>
 		</header>
 		<section class="options">
 			<div> 
 				<p id="left"></p>
 				<p id="left-winnings" class="winnings"></p>
+				<p id="score" class="winnings"></p>
 			</div>
-			<div> 
+			<div id="right-div"> 
 				<p id="right"> </p> 
 				<button class="higher" onclick="button_clicked(0)">Higher</button>
 				<button class="lower" onclick="button_clicked(1)">Lower</button>
