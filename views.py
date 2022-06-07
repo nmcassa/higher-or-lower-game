@@ -8,13 +8,17 @@ views = Blueprint(__name__, "views")
 def home():
     return render_template("index.html")
 
-@views.route('/test', methods=['GET', 'POST'])
-def testfn():
-    out = randomize(rl_getPay())
+@views.route("/gameRL")
+def game():
+    return render_template("gameRL.html")
+
+@views.route('/rl', methods=['GET', 'POST'])
+def rlfn():
+    rl = randomize(rl_getPay())
     # GET request
     if request.method == 'GET':
-        message = {'message': out}
-        return jsonify(message)  # serialize and use JSON headers
+        messageRL = {'messageRL': rl}
+        return jsonify(messageRL)  # serialize and use JSON headers
     # POST request
     if request.method == 'POST':
         print(request.get_json())  # parse as JSON

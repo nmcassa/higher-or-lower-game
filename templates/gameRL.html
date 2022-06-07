@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>RL Game</title>
+		<link rel="stylesheet" type="text/css" href="../static/styles.css">
+	</head>
+	<body onload="storageCheck()">
+		<header>
+			<p id="high-score"></p>
+		</header>
+		<section class="options">
+			<div> 
+				<p id="left"></p>
+				<p id="left-winnings" class="winnings"></p>
+				<p id="score" class="winnings"></p>
+			</div>
+			<div id="right-div"> 
+				<p id="right"> </p> 
+				<button class="higher" onclick="button_clicked(0)">Higher</button>
+				<button class="lower" onclick="button_clicked(1)">Lower</button>
+			</div>
+		</section>
+		<script type="text/javascript" src="../static/index.js"></script>
+		<script type="text/javascript" src="../static/rl.js"></script>
+	</body>
+</html>
